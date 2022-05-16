@@ -39,6 +39,9 @@
   </header>
 
   <main role="main" class="td-main">
+    {{ range $.Site.Home.AllTranslations }}
+    <a href="{{ .Page.Permalink }}">{{ .Language.Lang  }}</a> 
+    {{ end }}
     <section class="section section-out container-min-height section-has-title" id="public">
       <div class="container  td-outer doc-container-width">
         <div class="row flex-xl-nowrap">
@@ -65,7 +68,7 @@
   {{ partialCached "scripts.html" . }}
 
   <script>
-    window.location.href = window?.LOCATIONURL || '/compute/vm/intro/instance/'
+    // window.location.href = window?.LOCATIONURL || '/compute/vm/intro/instance/'
   </script>
 </body>
 
